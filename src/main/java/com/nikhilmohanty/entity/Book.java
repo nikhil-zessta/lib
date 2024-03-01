@@ -29,7 +29,7 @@ public class Book {
     @JsonManagedReference
     private Author author;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
     @JoinTable(
             name = "book_library_branch",
             joinColumns = @JoinColumn(name = "book_id"),

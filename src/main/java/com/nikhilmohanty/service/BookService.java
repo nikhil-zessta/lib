@@ -2,7 +2,6 @@ package com.nikhilmohanty.service;
 
 import com.nikhilmohanty.dto.BookCreateDTO;
 import com.nikhilmohanty.dto.BookDTO;
-import com.nikhilmohanty.dto.BookFindById;
 import com.nikhilmohanty.dto.BookUpdateDTO;
 import com.nikhilmohanty.entity.Author;
 import com.nikhilmohanty.entity.Book;
@@ -10,14 +9,12 @@ import com.nikhilmohanty.entity.LibraryBranch;
 import com.nikhilmohanty.repository.AuthorRepository;
 import com.nikhilmohanty.repository.BookRepository;
 import com.nikhilmohanty.repository.LibraryBranchRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -97,7 +94,7 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public void deleteBookById(long id){
+    public void deleteBookById(Long id){
         Book book = bookRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Book not found with id: " + id));
 

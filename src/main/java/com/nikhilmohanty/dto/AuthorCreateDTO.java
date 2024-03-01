@@ -5,7 +5,6 @@ import lombok.ToString;
 
 @Data
 @ToString
-public class BookDTO {
-    private String title;
+public class AuthorCreateDTO {
     private String authorName;
 }
