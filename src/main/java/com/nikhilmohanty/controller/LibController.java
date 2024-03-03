@@ -47,12 +47,6 @@ public class LibController {
         return authorService.createAuthor(authorCreateDTO);
     }
 
-    @PostMapping("/delete/author/{id}")
-    public ResponseEntity<?> deleteAuthorById(@PathVariable Long id){
-        authorService.deleteAuthorById(id);
-        logger.info(()->" Author is deleted with the give id ");
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
 
     @GetMapping("/books")
     public List<BookDTO> getAllBookWithAuthorName(){

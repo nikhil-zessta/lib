@@ -23,7 +23,7 @@
         private Long id;
         private String name;
 
-        @OneToMany(mappedBy = "author",cascade = CascadeType.ALL)
+        @OneToMany(mappedBy = "author")
         @JsonBackReference
         private List<Book> books;
     }

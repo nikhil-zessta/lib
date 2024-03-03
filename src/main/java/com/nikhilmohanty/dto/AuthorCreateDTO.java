@@ -6,5 +6,5 @@ import lombok.ToString;
 @Data
 @ToString
 public class AuthorCreateDTO {
-    private String authorName;
+    private String name;
 }
